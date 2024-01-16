@@ -3,8 +3,8 @@
 This is a Heroku buildpack that enables authenticated GitHub operations
 within a Heroku dyno.
 
-It detects a `GITHUB_AUTH_TOKEN` environment variable and creates a `.netrc`
-file with a GitHub entry.
+It detects a `GITLAB_AUTH_LOGIN` and $GITLAB_AUTH_TOKEN environment variable and creates a `.netrc`
+file with a Gitlab entry.
 
 It is the soul sister of the [npm Buildpack](https://github.com/zeke/npm-buildpack).
 
