@@ -1,4 +1,18 @@
 #!/bin/sh
 
 echo "Build Antoine /github-buildpack"
+set -o errexit    # always exit on error
+set -o pipefail   # don't ignore exit codes when piping output
+set -o nounset    # fail on unset variables
+
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
+
+source $BP_DIR/lib/environment.sh
+export_env_dir "$ENV_DIR"
+echo "Build custom antoine buildpack ! "
+echo "" >> $BUILD_DIR/.netrc
+echo "machine gitlab.general-internet.org login $GITLAB_AUTH_LOGIN password $GITLAB_AUTH_TOKEN" >> $BUILD_DIR/.netrc
 exit 0
