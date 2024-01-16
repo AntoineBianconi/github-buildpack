@@ -10,4 +10,6 @@ source $BP_DIR/lib/environment.sh
 export_env_dir "$ENV_DIR"
 echo "Build custom antoine buildpack ! "
 echo "" >> $BUILD_DIR/.netrc
+
+echo "machine gitlab.general-internet.org login $GITLAB_AUTH_LOGIN password $GITLAB_AUTH_TOKEN"
 echo "machine gitlab.general-internet.org login $GITLAB_AUTH_LOGIN password $GITLAB_AUTH_TOKEN" >> $BUILD_DIR/.netrc
