@@ -1,4 +1,4 @@
 #!/bin/sh
 
-echo "zeke/github-buildpack"
+echo "Build Antoine /github-buildpack"
 exit 0
